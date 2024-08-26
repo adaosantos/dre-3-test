@@ -23,6 +23,8 @@ Também é recomendado ajustar o user definido no template dos serviços airflow
 Os DAGs não estão sendo carregados.
 ### Cause
 O volume definido no template dos serviços airflow está apontando para a pasta errada.
+O DAG `smooth.py` está com um erro de sintaxe na definição do método `smooth()`
 ### Fix
 Apontamento do volume foi modificado de `./dag` para `./dags` no arquivo `compose.yaml`
+Corrigido a definição do método `smooth` no arquivo `./dags/smooth.py`
 > Pasta `./dag` foi removida, visto que não há uso para ela.
