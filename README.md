@@ -18,3 +18,11 @@ Ele não consegue manipular algumas pastas que foram montadas no container por p
 A forma recomendada de fazer isso é setando ela no arquivo `.env`
 > https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user
 Também é recomendado ajustar o user definido no template dos serviços airflow para usar essa env.
+
+## Problem
+Os DAGs não estão sendo carregados.
+### Cause
+O volume definido no template dos serviços airflow está apontando para a pasta errada.
+### Fix
+Apontamento do volume foi modificado de `./dag` para `./dags` no arquivo `compose.yaml`
+> Pasta `./dag` foi removida, visto que não há uso para ela.
